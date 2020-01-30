@@ -10,9 +10,13 @@ import Foundation
 
 public class SwiftDI {
     
-    public static var root = SwiftDI()
+    public static var `default` = SwiftDI()
     
     private var factories = [String: () -> Any]()
+    
+    public static func configure(container: SwiftDI = .default, _ block: (SwiftDI) -> Void) {
+        block(container)
+    }
     
     public func add<T>(_ factory: @escaping () -> T) {
         let key = String(describing: T.self)

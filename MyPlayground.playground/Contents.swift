@@ -36,10 +36,11 @@ class Foo {
 }
 
 // Register Dependencies
-
-SwiftDI.root.add { Foo() }
-SwiftDI.root.add { Bar() as SimpleProtocol }
-SwiftDI.root.add { Bar() }
+SwiftDI.configure {
+    $0.add { Foo() }
+    $0.add { Bar() as SimpleProtocol }
+    $0.add { Bar() }
+}
 
 let bar2 = Bar2()
 bar2.doSomething()
@@ -52,7 +53,3 @@ foo.doSomething()
 
 let foo2 = Foo(bar: bar2)
 foo2.doSomething()
-
-let foo3: Foo = SwiftDI.root.resolve()
-
-foo3.doSomething()

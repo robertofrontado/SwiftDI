@@ -15,7 +15,7 @@ public struct Inject<Value> {
     
     public var wrappedValue: Value {
         get {
-            return value ?? SwiftDI.root.resolve()
+            return value ?? SwiftDI.default.resolve() // TODO: Support multiple containers
         }
         set {
             value = newValue
