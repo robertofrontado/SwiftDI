@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A214EA642402FE7400ECDD91 /* Resolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A214EA632402FE7400ECDD91 /* Resolver.swift */; };
 		A250541C23E3012800AE7260 /* SwiftDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A250541223E3012800AE7260 /* SwiftDI.framework */; };
 		A250542123E3012800AE7260 /* SwiftDITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A250542023E3012800AE7260 /* SwiftDITests.swift */; };
 		A250542323E3012800AE7260 /* SwiftDI.h in Headers */ = {isa = PBXBuildFile; fileRef = A250541523E3012800AE7260 /* SwiftDI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A2C0B8CD23E301B400B93524 /* SwiftDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C0B8CC23E301B400B93524 /* SwiftDI.swift */; };
-		A2C0B8CF23E301CA00B93524 /* Inject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C0B8CE23E301CA00B93524 /* Inject.swift */; };
+		A2C0B8CF23E301CA00B93524 /* Injected.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C0B8CE23E301CA00B93524 /* Injected.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,6 +26,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A214EA632402FE7400ECDD91 /* Resolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resolver.swift; sourceTree = "<group>"; };
 		A250541223E3012800AE7260 /* SwiftDI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftDI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A250541523E3012800AE7260 /* SwiftDI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftDI.h; sourceTree = "<group>"; };
 		A250541623E3012800AE7260 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -32,7 +34,7 @@
 		A250542023E3012800AE7260 /* SwiftDITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDITests.swift; sourceTree = "<group>"; };
 		A250542223E3012800AE7260 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2C0B8CC23E301B400B93524 /* SwiftDI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDI.swift; sourceTree = "<group>"; };
-		A2C0B8CE23E301CA00B93524 /* Inject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inject.swift; sourceTree = "<group>"; };
+		A2C0B8CE23E301CA00B93524 /* Injected.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injected.swift; sourceTree = "<group>"; };
 		A2C0B8D223E305C800B93524 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
@@ -97,7 +99,8 @@
 			isa = PBXGroup;
 			children = (
 				A2C0B8CC23E301B400B93524 /* SwiftDI.swift */,
-				A2C0B8CE23E301CA00B93524 /* Inject.swift */,
+				A2C0B8CE23E301CA00B93524 /* Injected.swift */,
+				A214EA632402FE7400ECDD91 /* Resolver.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -212,7 +215,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A2C0B8CF23E301CA00B93524 /* Inject.swift in Sources */,
+				A214EA642402FE7400ECDD91 /* Resolver.swift in Sources */,
+				A2C0B8CF23E301CA00B93524 /* Injected.swift in Sources */,
 				A2C0B8CD23E301B400B93524 /* SwiftDI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

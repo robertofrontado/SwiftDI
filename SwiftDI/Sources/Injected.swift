@@ -1,5 +1,5 @@
 //
-//  Inject.swift
+//  Injected.swift
 //  SwiftDI
 //
 //  Created by Roberto Frontado on 30/01/2020.
@@ -9,7 +9,7 @@
 import Foundation
 
 @propertyWrapper
-public struct Inject<Value> {
+public struct Injected<Value> {
     
     private var value: Value?
     
