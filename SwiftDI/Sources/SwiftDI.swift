@@ -9,27 +9,32 @@
 import Foundation
 
 public class SwiftDI {
+
+    public static let `default` = SwiftDI()
     
-    public static var `default` = SwiftDI()
-    
-    private var factories = [String: () -> Any]()
+    private var dependencies = [String: Resolver]()
     
     public static func configure(container: SwiftDI = .default, _ block: (SwiftDI) -> Void) {
         block(container)
     }
     
-    public func add<T>(_ factory: @escaping () -> T) {
+    public func single<T>(_ block: () -> T) {
         let key = String(describing: T.self)
-        factories[key] = factory
+        dependencies[key] = Resolver.single(object: block())
     }
- 
+    
+    public func factory<T>(_ factory: @escaping () -> T) {
+        let key = String(describing: T.self)
+        dependencies[key] = Resolver.factory(block: factory)
+    }
+    
     public func resolve<T>() -> T {
         let key = String(describing: T.self)
-        
-        guard let component: T = factories[key]?() as? T else {
+        print()
+        guard let object = dependencies[key]?.resolve() as? T else {
             fatalError("Dependency '\(T.self)' not resolved!")
         }
         
-        return component
+        return object
     }
 }
